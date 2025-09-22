@@ -93,7 +93,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="flex flex-row justify-between w-full gap-6">
+    <nav className="flex flex-row justify-between w-full gap-4 lg:gap-6">
       <Card className="hidden lg:block h-16 lg:aspect-[6/2]! w-full lg:w-min p-3! order-2">
         <Image
           src={"/logo.png"}
