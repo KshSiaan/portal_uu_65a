@@ -93,8 +93,8 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="flex w-full gap-6">
-      <Card className="h-16 aspect-auto lg:aspect-[6/2]! w-full lg:w-min p-3! order-2">
+    <nav className="flex flex-row justify-between w-full gap-6">
+      <Card className="hidden lg:block h-16 lg:aspect-[6/2]! w-full lg:w-min p-3! order-2">
         <Image
           src={"/logo.png"}
           height={200}
@@ -162,11 +162,11 @@ export default function Navbar() {
         </NavigationMenu>
       </Card>
 
-      <Card className="text-xs order-1 lg:order-3 lg:text-base h-16 aspect-[4/2] lg:aspect-[6/2] p-2! gap-0! text-center! flex justify-center items-center font-semibold">
+      <Card className="w-full lg:w-auto text-xs order-1 lg:order-3 lg:text-base h-16 aspect-[4/2] lg:aspect-[6/2] p-2! gap-0! text-center! flex justify-center items-center font-semibold">
         <h4>65A Eve</h4>
         <p className="text-amber-400">The Golden Batch</p>
       </Card>
-      <Card className="order-3 aspect-[4/2]! flex items-center justify-center p-0!">
+      <Card className="lg:hidden order-3 aspect-[4/2]! flex items-center justify-center p-0!">
         <Sheet>
           <SheetTrigger asChild>
             <Button className="w-full h-full!" variant={"ghost"}>
@@ -175,7 +175,15 @@ export default function Navbar() {
           </SheetTrigger>
           <SheetContent>
             <SheetHeader>
-              <SheetTitle>UU Portal Menu</SheetTitle>
+              <SheetTitle></SheetTitle>
+              <Image
+                src={"/logo.png"}
+                height={200}
+                width={800}
+                alt="logo"
+                draggable={false}
+                className="object-contain h-[6dvh]!"
+              />
             </SheetHeader>
             <div className="flex-1 h-full w-full space-y-6 p-6 overflow-y-auto">
               {navs.map((x) =>
