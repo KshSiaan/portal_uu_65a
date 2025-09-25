@@ -94,7 +94,7 @@ export default function Navbar() {
 
   return (
     <nav className="flex flex-row justify-between w-full gap-4 lg:gap-6">
-      <Card className="hidden lg:block h-16 lg:aspect-[6/2]! w-full lg:w-min p-3! order-2">
+      <Card className="bg-foreground dark:bg-card hidden lg:block h-16 lg:aspect-[6/2]! w-full lg:w-min p-3! order-2">
         <Image
           src={"/logo.png"}
           height={200}
@@ -104,7 +104,7 @@ export default function Navbar() {
           className="object-contain w-full h-full!"
         />
       </Card>
-      <Card className="order-2 hidden xl:flex h-16 flex-1 rounded-lg p-2! w-full flex-row justify-center items-center">
+      <Card className="order-2 hidden xl:flex h-16 flex-1 rounded-lg p-2! w-full flex-row justify-center items-center border-foreground dark:border-border">
         <NavigationMenu className="">
           <NavigationMenuList className="">
             {navs.map((x) =>
@@ -139,8 +139,8 @@ export default function Navbar() {
                       <div className="w-full h-fit grid grid-cols-2 gap-4">
                         {x.hasChild &&
                           x.childs?.map((x) => (
-                            <Button variant={"secondary"} key={x.to}>
-                              {x.title}
+                            <Button variant={"secondary"} key={x.to} asChild>
+                              <Link href={x.to}>{x.title}</Link>
                             </Button>
                           ))}
                       </div>
@@ -162,7 +162,7 @@ export default function Navbar() {
         </NavigationMenu>
       </Card>
 
-      <Card className="w-full lg:w-auto text-xs order-1 lg:order-3 lg:text-base h-16 aspect-[4/2] lg:aspect-[6/2] p-2! gap-0! text-center! flex justify-center items-center font-semibold">
+      <Card className="w-full bg-foreground text-background dark:bg-card dark:text-foreground lg:w-auto text-xs order-1 lg:order-3 lg:text-base h-16 aspect-[4/2] lg:aspect-[6/2] p-2! gap-0! text-center! flex justify-center items-center font-semibold">
         <h4>65A Eve</h4>
         <p className="text-amber-400">The Golden Batch</p>
       </Card>
@@ -193,17 +193,14 @@ export default function Navbar() {
                       key={y.title}
                       className="w-full"
                       variant={"secondary"}
+                      asChild
                     >
-                      {y.title}
+                      <Link href={y.to}>{y.title}</Link>
                     </Button>
                   ))
                 ) : (
-                  <Button
-                    key={x.title}
-                    className="w-full"
-                    variant={"secondary"}
-                  >
-                    {x.title}
+                  <Button variant={"secondary"} key={x.to} asChild>
+                    <Link href={x.to ?? "/"}>{x.title}</Link>
                   </Button>
                 )
               )}

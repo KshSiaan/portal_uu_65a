@@ -3,6 +3,8 @@ import { League_Spartan } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
+import { Toaster } from "@/components/ui/sonner";
+import ClientProvider from "@/provider/client-provider";
 const league = League_Spartan({
   variable: "--font-league-spartan",
   subsets: ["latin"],
@@ -28,7 +30,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <ClientProvider>{children}</ClientProvider>
+          <Toaster />
           <Analytics />
         </ThemeProvider>
       </body>
