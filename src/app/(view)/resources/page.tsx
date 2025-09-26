@@ -1,6 +1,6 @@
 "use client";
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { getRoutineApi } from "@/lib/api/base";
+import { getResourcesApi } from "@/lib/api/base";
 import { useQuery } from "@tanstack/react-query";
 import { CircleChevronRightIcon } from "lucide-react";
 import Image from "next/image";
@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function Page() {
   const { data, isPending } = useQuery({
     queryKey: ["routine"],
-    queryFn: getRoutineApi,
+    queryFn: getResourcesApi,
   });
 
   if (isPending) {

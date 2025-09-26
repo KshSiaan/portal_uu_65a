@@ -1,3 +1,4 @@
+import { Client } from "@notionhq/client";
 import { createClient } from "@supabase/supabase-js";
 export const apiConfig = {
   db: {
@@ -10,3 +11,4 @@ export const apiConfig = {
 };
 
 export const supabase = createClient(apiConfig.db.url, apiConfig.db.api_key);
+export const notionClient = new Client({ auth: apiConfig.notion.secret });

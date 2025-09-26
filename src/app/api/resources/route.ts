@@ -17,13 +17,13 @@ export interface contentType {
 
 export async function GET() {
   const page = await notionClient.pages.retrieve({
-    page_id: "27ab2c94-f333-8053-bc87-d2c45b119224",
+    page_id: "27ab2c94f33380218c14d24211b0fdd5",
   });
 
   const content: contentType[] = [];
 
   const blocks: any = await notionClient.blocks.children.list({
-    block_id: "27ab2c94-f333-8053-bc87-d2c45b119224",
+    block_id: "27ab2c94f33380218c14d24211b0fdd5",
   });
 
   for (const x of blocks.results) {
