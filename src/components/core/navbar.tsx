@@ -20,57 +20,56 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "../ui/sheet";
+const navs = [
+  {
+    title: "Class routine",
+    to: "/routine",
+    hasChild: false,
+  },
+  {
+    title: "Notices",
+    to: "/notices",
+    hasChild: false,
+  },
+  {
+    title: "Semester Essentials",
+    to: "/essentials",
+    hasChild: false,
+  },
+  {
+    title: "Links & Resources",
+    to: "/resources",
+    hasChild: false,
+  },
+  {
+    title: "FAQ",
+    to: "/faq",
+    hasChild: false,
+  },
+  {
+    title: "Chat / Group Links",
+    to: "/chat",
+    hasChild: false,
+  },
+  {
+    title: "Others",
+    hasChild: true,
+    childs: [
+      { title: "Feedback Box", to: "/feedback" },
+      { title: "Quick Tools & Suggestions", to: "/tools" },
+    ],
+  },
+  {
+    title: "Contacts",
+    hasChild: true,
+    childs: [
+      { title: "Teachers", to: "/teachers" },
+      { title: "Faculty Advisor", to: "/faculty" },
+      { title: "Class Representative", to: "/cr" },
+    ],
+  },
+];
 export default function Navbar() {
-  const navs = [
-    {
-      title: "Routine",
-      to: "/routine",
-      hasChild: false,
-    },
-    {
-      title: "Notices",
-      to: "/notices",
-      hasChild: false,
-    },
-    {
-      title: "Semester Essentials",
-      to: "/essentials",
-      hasChild: false,
-    },
-    {
-      title: "Links & Resources",
-      to: "/resources",
-      hasChild: false,
-    },
-    {
-      title: "FAQ",
-      to: "/faq",
-      hasChild: false,
-    },
-    {
-      title: "Chat / Group Links",
-      to: "/chat",
-      hasChild: false,
-    },
-    {
-      title: "Others",
-      hasChild: true,
-      childs: [
-        { title: "Feedback Box", to: "/feedback" },
-        { title: "Quick Tools & Suggestions", to: "/tools" },
-      ],
-    },
-    {
-      title: "Contacts",
-      hasChild: true,
-      childs: [
-        { title: "Teachers", to: "/teachers" },
-        { title: "Faculty Advisor", to: "/faculty" },
-        { title: "Class Representative", to: "/cr" },
-      ],
-    },
-  ];
-
   return (
     <nav className="flex flex-row justify-between w-full gap-4 lg:gap-6">
       <Card className="bg-foreground dark:bg-card hidden lg:block h-16 lg:aspect-[6/2]! w-full lg:w-min p-3! order-2">
