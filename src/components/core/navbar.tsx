@@ -24,68 +24,49 @@ export default function Navbar() {
   const navs = [
     {
       title: "Routine",
-      to: "routine",
+      to: "/routine",
       hasChild: false,
     },
     {
       title: "Notices",
-      to: "notices",
+      to: "/notices",
       hasChild: false,
     },
     {
       title: "Semester Essentials",
-      to: "essentials",
+      to: "/essentials",
       hasChild: false,
     },
     {
       title: "Links & Resources",
-      to: "resources",
+      to: "/resources",
       hasChild: false,
     },
-
     {
       title: "FAQ",
-      to: "faq",
+      to: "/faq",
       hasChild: false,
     },
     {
       title: "Chat / Group Links",
-      to: "chat",
+      to: "/chat",
       hasChild: false,
     },
-
     {
       title: "Others",
       hasChild: true,
       childs: [
-        {
-          title: "Feedback Box",
-          to: "feedback",
-          hasChild: false,
-        },
-        {
-          title: "Quick Tools & Suggestions",
-          to: "tools",
-          hasChild: false,
-        },
+        { title: "Feedback Box", to: "/feedback" },
+        { title: "Quick Tools & Suggestions", to: "/tools" },
       ],
     },
     {
       title: "Contacts",
       hasChild: true,
       childs: [
-        {
-          title: "Teachers",
-          to: "teachers",
-        },
-        {
-          title: "Faculty Advisor",
-          to: "faculty",
-        },
-        {
-          title: "Class Representative",
-          to: "cr",
-        },
+        { title: "Teachers", to: "/teachers" },
+        { title: "Faculty Advisor", to: "/faculty" },
+        { title: "Class Representative", to: "/cr" },
       ],
     },
   ];
@@ -151,7 +132,7 @@ export default function Navbar() {
                     asChild
                     className={navigationMenuTriggerStyle()}
                   >
-                    <Link href={`/${x.to}`}>{x.title}</Link>
+                    <Link href={x.to!}>{x.title}</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               )
