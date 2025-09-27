@@ -13,3 +13,8 @@ export async function getResourcesApi() {
   const res = await call.json();
   return res;
 }
+export async function getChatApi() {
+  const call = await fetch("/api/chat");
+  const res = await call.json();
+  return res;
+}

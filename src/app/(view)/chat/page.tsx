@@ -1,14 +1,14 @@
 "use client";
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { getResourcesApi } from "@/lib/api/base";
+import { getChatApi } from "@/lib/api/base";
 import { useQuery } from "@tanstack/react-query";
 import { CircleChevronRightIcon } from "lucide-react";
 import Image from "next/image";
 
 export default function Page() {
   const { data, isPending } = useQuery({
-    queryKey: ["resource"],
-    queryFn: getResourcesApi,
+    queryKey: ["chat"],
+    queryFn: getChatApi,
   });
 
   if (isPending) {

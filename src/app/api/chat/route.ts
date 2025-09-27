@@ -17,13 +17,13 @@ export interface contentType {
 
 export async function GET() {
   const page = await notionClient.pages.retrieve({
-    page_id: "27ab2c94f33380218c14d24211b0fdd5",
+    page_id: "27bb2c94f33380feb5a4e9fe71e92c59",
   });
 
   const content: contentType[] = [];
 
   const blocks: any = await notionClient.blocks.children.list({
-    block_id: "27ab2c94f33380218c14d24211b0fdd5",
+    block_id: "27bb2c94f33380feb5a4e9fe71e92c59",
   });
 
   for (const x of blocks.results) {
@@ -61,12 +61,12 @@ async function blockGetter(x: string) {
 
   blocks.results.map((x: any) => {
     if (x.type === "bulleted_list_item") {
+      console.log(x.bulleted_list_item.rich_text[0]?.text?.content);
       const temp: string[] = [];
 
       x.bulleted_list_item.rich_text.map((y: any) => {
         temp.push(y.plain_text);
       });
-      // console.log();
 
       possibles.push({
         type: x.type,
