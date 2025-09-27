@@ -32,8 +32,8 @@ export default function Page() {
   }
 
   return (
-    <main className="w-full mx-auto px-6 py-8 flex flex-col h-full ">
-      <header className="mb-8 flex justify-between items-center">
+    <main className="w-full mx-auto  lg:px-6 py-8 flex flex-col h-full ">
+      <header className="mb-8 flex flex-col lg:flex-row justify-between items-center">
         <h1 className="text-4xl font-bold text-balance leading-tight">
           {data.page.properties.title.title[0].plain_text}
         </h1>
@@ -50,7 +50,7 @@ export default function Page() {
                   <div className="">
                     <ChevronRightCircleIcon />
                   </div>
-                  <h3 className="text-lg font-medium text-foreground">
+                  <h3 className="lg:text-lg font-medium text-foreground">
                     {item}
                   </h3>
                 </div>

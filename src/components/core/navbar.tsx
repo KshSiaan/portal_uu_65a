@@ -189,15 +189,20 @@ export default function Navbar() {
                   x.childs?.map((y) => (
                     <Button
                       key={y.title}
-                      className="w-full"
-                      variant={"secondary"}
+                      className="w-full!"
+                      variant="secondary"
                       asChild
                     >
                       <Link href={y.to}>{y.title}</Link>
                     </Button>
                   ))
                 ) : (
-                  <Button variant={"secondary"} key={x.to} asChild>
+                  <Button
+                    variant="secondary"
+                    className="w-full!"
+                    key={x.to}
+                    asChild
+                  >
                     <Link href={x.to ?? "/"}>{x.title}</Link>
                   </Button>
                 )

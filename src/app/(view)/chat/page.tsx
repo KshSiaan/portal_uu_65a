@@ -27,8 +27,8 @@ export default function Page() {
   }
 
   return (
-    <main className="w-full mx-auto px-6 py-8 flex flex-col h-full ">
-      <header className="mb-8 flex justify-between items-center">
+    <main className="w-full mx-auto lg:px-6 py-8 flex flex-col h-full ">
+      <header className="mb-8 flex flex-col lg:flex-row justify-between items-center">
         <h1 className="text-4xl font-bold text-balance leading-tight">
           {data.page.properties.title.title[0].plain_text}
         </h1>
@@ -36,12 +36,12 @@ export default function Page() {
           Last updated: {new Date(data.page.last_edited_time).toLocaleString()}
         </p>
       </header>
-      <div className="flex-1 overflow-y-auto px-12">
+      <div className="flex-1 overflow-y-auto lg:px-12">
         <div className="space-y-8">
           {data.content.map((item: any, index: number) => {
             if (item.type === "heading_2") {
               return (
-                <section key={`${item.data}-${index}`} className="space-y-4">
+                <section key={`${item.data}-${index}`} className="">
                   <h2 className="text-2xl font-semibold border-b border-border pb-2">
                     {item.data}
                   </h2>
@@ -49,9 +49,11 @@ export default function Page() {
               );
             } else if (item.type === "bulleted_list_item") {
               return (
-                <div key={index} className="space-y-3">
+                <div key={index} className="space-y-4 overflow-x-auto">
                   <div className="bg-muted/50 rounded-lg p-6">
-                    <h3 className="text-lg font-medium mb-3">{item.text}</h3>
+                    <h3 className="text-lg font-medium mb-3 break-words">
+                      {item.text}
+                    </h3>
                     {item.data && item.data.length > 0 && (
                       <ul className="space-y-2 ml-4">
                         {item.data.map((subItem: any, subIndex: number) => (
