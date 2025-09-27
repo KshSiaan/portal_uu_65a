@@ -22,13 +22,13 @@ import {
 } from "../ui/sheet";
 const navs = [
   {
-    title: "Class routine",
-    to: "/routine",
+    title: "Notices",
+    to: "/notices",
     hasChild: false,
   },
   {
-    title: "Notices",
-    to: "/notices",
+    title: "Class routine",
+    to: "/routine",
     hasChild: false,
   },
   // {
