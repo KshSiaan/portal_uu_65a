@@ -31,21 +31,21 @@ const navs = [
     to: "/notices",
     hasChild: false,
   },
-  {
-    title: "Semester Essentials",
-    to: "/essentials",
-    hasChild: false,
-  },
+  // {
+  //   title: "Semester Essentials",
+  //   to: "/essentials",
+  //   hasChild: false,
+  // },
   {
     title: "Links & Resources",
     to: "/resources",
     hasChild: false,
   },
-  {
-    title: "FAQ",
-    to: "/faq",
-    hasChild: false,
-  },
+  // {
+  //   title: "FAQ",
+  //   to: "/faq",
+  //   hasChild: false,
+  // },
   {
     title: "Chat / Group Links",
     to: "/chat",
