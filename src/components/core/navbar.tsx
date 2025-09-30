@@ -37,11 +37,7 @@ const navs = [
     to: "/resources",
     hasChild: false,
   },
-  {
-    title: "FAQ",
-    to: "/faq",
-    hasChild: false,
-  },
+
   {
     title: "Chat / Group Links",
     to: "/chat",
@@ -53,6 +49,10 @@ const navs = [
     childs: [
       { title: "Feedback Box", to: "/feedback" },
       { title: "Quick Tools & Suggestions", to: "/tools" },
+      {
+        title: "FAQ",
+        to: "/faq",
+      },
     ],
   },
   {
