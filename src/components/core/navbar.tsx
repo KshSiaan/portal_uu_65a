@@ -1,3 +1,4 @@
+"use client";
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -46,7 +47,7 @@ const navs = [
     hasChild: true,
     childs: [
       { title: "Feedback Box", to: "/feedback" },
-      { title: "Quick Tools & Suggestions", to: "/tools" },
+      { title: "Quick Tools", to: "/tools" },
       {
         title: "FAQ",
         to: "/faq",
