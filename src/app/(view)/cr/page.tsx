@@ -1,3 +1,4 @@
+import { PhoneIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -11,6 +12,9 @@ export default function Page() {
         Ksh Siaan
       </Link>
       <p>ID: 2253091031</p>
+      <p className="flex items-center gap-2 mt-6">
+        <PhoneIcon className="size-4 mb-1" /> 01904387966
+      </p>
     </div>
   );
 }
