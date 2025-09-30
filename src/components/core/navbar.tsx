@@ -1,7 +1,6 @@
-import React from "react";
-import { Card } from "../ui/card";
+import { Card } from "@/components/ui/card";
 import Image from "next/image";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import {
   NavigationMenu,
@@ -19,7 +18,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "../ui/sheet";
+} from "@/components/ui/sheet";
 
 const navs = [
   {
@@ -37,7 +36,6 @@ const navs = [
     to: "/resources",
     hasChild: false,
   },
-
   {
     title: "Chat / Group Links",
     to: "/chat",
@@ -70,27 +68,27 @@ export default function Navbar() {
   return (
     <nav className="flex flex-row justify-between w-full gap-4 lg:gap-6">
       {/* Logo (desktop) */}
-      <Card className="bg-foreground dark:bg-card hidden lg:block h-16 lg:aspect-[6/2]! w-full lg:w-min p-3! order-2">
+      <Card className="bg-foreground dark:bg-card hidden lg:block h-16 lg:!aspect-[6/2] w-full lg:w-min !p-3 order-2">
         <Image
           src={"/logo.png"}
           height={200}
           width={800}
           alt="logo"
           draggable={false}
-          className="object-contain w-full h-full!"
+          className="object-contain w-full !h-full"
         />
       </Card>
 
       {/* Navbar desktop */}
-      <Card className="order-2 hidden xl:flex h-16 flex-1 rounded-lg p-2! w-full flex-row justify-center items-center border-foreground dark:border-border">
+      <Card className="order-2 hidden xl:flex h-16 flex-1 rounded-lg !p-2 w-full flex-row justify-center items-center border-foreground dark:border-border">
         <NavigationMenu>
           <NavigationMenuList>
             {navs.map((x) => (
-              <NavigationMenuItem key={x.title} className="relative!">
+              <NavigationMenuItem key={x.title} className="!relative">
                 {x.hasChild ? (
                   <>
                     <NavigationMenuTrigger>{x.title}</NavigationMenuTrigger>
-                    <NavigationMenuContent className="w-full! absolute h-[20dvh]">
+                    <NavigationMenuContent className="!w-full absolute h-[20dvh]">
                       <div className="w-full grid grid-cols-2 p-2 gap-4 h-full">
                         <Card className="w-full max-w-lg mx-auto p-4 grid gap-2 text-center">
                           <div className="flex items-center justify-center">
@@ -140,16 +138,16 @@ export default function Navbar() {
       </Card>
 
       {/* Batch info */}
-      <Card className="w-full bg-foreground text-background dark:bg-card dark:text-foreground lg:w-auto text-xs order-1 lg:order-3 lg:text-base h-16 aspect-[4/2] lg:aspect-[6/2] p-2! gap-0! text-center! flex justify-center items-center font-semibold">
+      <Card className="w-full bg-foreground text-background dark:bg-card dark:text-foreground lg:w-auto text-xs order-1 lg:order-3 lg:text-base h-16 aspect-[4/2] lg:aspect-[6/2] !p-2 !gap-0 !text-center flex justify-center items-center font-semibold">
         <h4>65A Eve</h4>
         <p className="text-amber-400">The Golden Batch</p>
       </Card>
 
       {/* Mobile menu */}
-      <Card className="lg:hidden order-3 aspect-[4/2]! flex items-center justify-center p-0!">
+      <Card className="lg:hidden order-3 !aspect-[4/2] flex items-center justify-center !p-0">
         <Sheet>
           <SheetTrigger asChild>
-            <Button className="w-full h-full!" variant="ghost">
+            <Button className="w-full !h-full" variant="ghost">
               <MenuIcon />
             </Button>
           </SheetTrigger>
@@ -162,7 +160,7 @@ export default function Navbar() {
                 width={800}
                 alt="logo"
                 draggable={false}
-                className="object-contain h-[6dvh]!"
+                className="object-contain !h-[6dvh]"
               />
             </SheetHeader>
             <div className="flex-1 h-full w-full space-y-6 p-6 overflow-y-auto">
@@ -171,7 +169,7 @@ export default function Navbar() {
                   x.childs?.map((y) => (
                     <Button
                       key={y.title}
-                      className="w-full!"
+                      className="!w-full"
                       variant="secondary"
                       asChild
                     >
@@ -181,7 +179,7 @@ export default function Navbar() {
                 ) : (
                   <Button
                     variant="secondary"
-                    className="w-full!"
+                    className="!w-full"
                     key={x.to}
                     asChild
                   >
