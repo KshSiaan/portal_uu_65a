@@ -5,7 +5,10 @@ export default function Page() {
   return (
     <div className="h-full w-full grid grid-rows-2 lg:grid-rows-3 gap-6">
       <div className="h-full w-full lg:row-span-2 flex justify-center items-center">
-        <div className="bg-card w-[80%] lg:w-fit lg:h-full aspect-square rounded-full shadow border-2 border-dashed"></div>
+        <div
+          className="bg-card w-[80%] lg:w-fit lg:h-full aspect-square rounded-full shadow border-2 border-dashed bg-contain bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/ava/Juthy.svg')" }}
+        />
       </div>
       <div className="text-center!">
         <h2 className="text-center text-2xl lg:text-5xl">
