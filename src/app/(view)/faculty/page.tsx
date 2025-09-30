@@ -17,7 +17,7 @@ export default function Page() {
         </p>
         <p className="w-fit flex justify-center items-center mx-auto gap-2">
           <PhoneIcon className="size-4" />
-          01234567890
+          +880 1302-466867
         </p>
 
         <p className="lg:text-3xl">
